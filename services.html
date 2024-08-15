@@ -74,7 +74,7 @@
         <h2>Roofing</h2>
         <p>Roofing Jobs completed.</p>
       </div>
-      <div class='card'>
+      <div class='card' onclick="location.href='glazing.html'">
         <h2>Glazing</h2>
         <p>Beautiful landscaping to enhance your outdoor space.</p>
       </div>
@@ -101,6 +101,8 @@
               window.location.href = 'contact.html';
             } else if (event.target.id === 'roofing') {
               window.location.href = 'roofing.html';
+            } else if (event.target.id === 'glazing') {
+              window.location.href = 'glazing.html';
             } else if (event.target.id === 'home') {
               window.location.href = 'index.html';
             }
