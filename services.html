@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JR Home Care - Services</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+    .title {
+      color: #002366; /* Navy Blue */
+    }
+    .description {
+      color: #333;
+    }
+    .grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #002366; /* Navy Blue */
+      flex: 1 1 calc(33.333% - 40px);
+      box-sizing: border-box;
+    }
+    .card:hover {
+      background-color: #e0e0e0;
+    }
+    .card h2 {
+      color: #228B22; /* Green */
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <img src="./logo.png" alt="JR Home Care Logo" class="logo"> 
+    <div id="header"></div>
+
+    <h1 class="title">Our Services</h1>
+    <p class="description">Explore the wide range of handyman services we offer.</p>
+
+    <section class="grid">
+      <div class='card'>
+        <h2>Plumbing</h2>
+        <p>Professional plumbing services for all your needs.</p>
+      </div>
+      <div class='card'>
+        <h2>Electrical</h2>
+        <p>Expert electrical repairs and installations.</p>
+      </div>
+      <div class='card'>
+        <h2>Carpentry</h2>
+        <p>Quality carpentry work for your home projects.</p>
+      </div>
+      <div class='card'>
+        <h2>Painting</h2>
+        <p>Interior and exterior painting services.</p>
+      </div>
+      <div class='card'>
+        <h2>Landscaping</h2>
+        <p>Beautiful landscaping to enhance your outdoor space.</p>
+      </div>
+      <div class='card'>
+        <h2>Cleaning</h2>
+        <p>Thorough cleaning services for your home.</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    // Load the header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        // Add event listeners for radio buttons
+        document.querySelectorAll('input[name="radio"]').forEach((radio) => {
+          radio.addEventListener('change', (event) => {
+            if (event.target.id === 'services') {
+              window.location.href = 'services.html';
+            } else if (event.target.id === 'contact') {
+              window.location.href = 'contact.html';
+            } else if (event.target.id === 'home') {
+              window.location.href = 'index.html';
+            }
+          });
+        });
+      });
+  </script>
+</body>
+
+</html>
