@@ -33,6 +33,7 @@
       color: #002366; /* Navy Blue */
       flex: 1 1 calc(33.333% - 40px);
       box-sizing: border-box;
+      cursor: pointer;
     }
     .card:hover {
       background-color: #e0e0e0;
@@ -69,7 +70,7 @@
         <h2>Carpentry</h2>
         <p>Quality carpentry work for your home projects.</p>
       </div>
-      <div class='card'>
+      <div class='card' onclick="location.href='roofing.html'">
         <h2>Roofing</h2>
         <p>Roofing Jobs completed.</p>
       </div>
@@ -98,6 +99,8 @@
               window.location.href = 'services.html';
             } else if (event.target.id === 'contact') {
               window.location.href = 'contact.html';
+            } else if (event.target.id === 'roofing') {
+              window.location.href = 'roofing.html';
             } else if (event.target.id === 'home') {
               window.location.href = 'index.html';
             }
