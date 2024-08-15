@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JR Home Care - Heating</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+    .title {
+      color: #002366; /* Navy Blue */
+    }
+    .description {
+      color: #333;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100vh; /* Full screen height */
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure images cover the entire slide */
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 200px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none; /* Hide default buttons */
+    }
+    .custom-navigation {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .custom-button {
+      background-color: #002366; /* Navy Blue */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <img src="./logo.png" alt="JR Home Care Logo" class="logo"> 
+    <div id="header"></div>
+
+    <h1 class="title">Heating Jobs Completed</h1>
+    <p class="description">Swipe through the images to see our completed heating projects.</p>
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="/images/heating/heating1.jpg" alt="Heating Job 1"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating2.jpg" alt="Heating Job 2"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating3.jpg" alt="Heating Job 3"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating4.jpg" alt="Heating Job 4"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating5.jpg" alt="Heating Job 5"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating6.jpg" alt="Heating Job 6"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating7.jpg" alt="Heating Job 7"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating8.jpg" alt="Heating Job 8"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating9.jpg" alt="Heating Job 9"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating10.jpg" alt="Heating Job 10"></div>
+        <div class="swiper-slide"><img src="/images/heating/heating11.jpg" alt="Heating Job 11"></div>
+        <!-- Add more slides as needed -->
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="custom-navigation">
+      <button class="custom-button" id="prevButton">Previous</button>
+      <button class="custom-button" id="nextButton">Next</button>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script type="module">
+    // Load the header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        // Add event listeners for radio buttons
+        document.querySelectorAll('input[name="radio"]').forEach((radio) => {
+          radio.addEventListener('change', (event) => {
+            if (event.target.id === 'services') {
+              window.location.href = 'services.html';
+            } else if (event.target.id === 'contact') {
+              window.location.href = 'contact.html';
+            } else if (event.target.id === 'home') { window.location.href = 'heating.html';                                     } else if (event.target.id === 'heating') {
+              window.location.href = 'index.html';
+            }
+          });
+        });
+      });
+
+    // Initialize Swiper
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      effect: 'fade',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    // Custom navigation buttons
+    document.getElementById('nextButton').addEventListener('click', () => swiper.slideNext());
+    document.getElementById('prevButton').addEventListener('click', () => swiper.slidePrev());
+  </script>
+</body>
+
+</html>
