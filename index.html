@@ -21,6 +21,7 @@
     .grid {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
     .card {
       background-color: #fff;
@@ -30,6 +31,8 @@
       text-align: center;
       text-decoration: none;
       color: #002366; /* Navy Blue */
+      flex: 1 1 calc(33.333% - 40px);
+      box-sizing: border-box;
     }
     .card:hover {
       background-color: #e0e0e0;
@@ -62,6 +65,11 @@
       <a href="contact.html" class='card'>
         <h2>Contact Us →</h2>
         <p>Get in touch with us for a free quote or to schedule a service.</p>
+      </a>
+
+      <a href="roofing.html" class='card'>
+        <h2>Roofing →</h2>
+        <p>See our completed roofing projects.</p>
       </a>
     </section>
   </main>
